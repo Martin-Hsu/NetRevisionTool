@@ -51,25 +51,7 @@ namespace Unclassified.Util
 		{
 			if (!IsOutputRedirected)
 			{
-				var prevEncoding = Console.OutputEncoding;
-				int x = Console.CursorLeft;
 				Console.OutputEncoding = Encoding.UTF8;
-				Console.Write("Ω");
-				if (Console.CursorLeft == x + 1)
-				{
-					// One character displayed
-					Console.CursorLeft--;
-					Console.Write(" ");
-					Console.CursorLeft--;
-				}
-				else
-				{
-					// Multiple characters displayed, Unicode not supported
-					Console.OutputEncoding = prevEncoding;
-					Console.CursorLeft -= 3;
-					Console.Write("   ");
-					Console.CursorLeft -= 3;
-				}
 			}
 		}
 

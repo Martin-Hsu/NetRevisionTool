@@ -255,7 +255,7 @@ namespace NetRevisionTool
 		private void ReadFileLines(string readFileName)
 		{
 			List<string> linesList = new List<string>();
-			using (StreamReader sr = new StreamReader(readFileName, Encoding.Default, true))
+			using (StreamReader sr = new StreamReader(readFileName, Encoding.UTF8, true))
 			{
 				// Read all lines from source file into lines buffer
 				while (!sr.EndOfStream)

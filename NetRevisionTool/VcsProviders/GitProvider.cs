@@ -84,7 +84,7 @@ namespace NetRevisionTool.VcsProviders
 			ProcessStartInfo psi = new ProcessStartInfo(gitExec, "log -n 1 --format=format:\"" + gitLogFormat + "\"");
 			psi.WorkingDirectory = path;
 			psi.RedirectStandardOutput = true;
-			psi.StandardOutputEncoding = Encoding.Default;
+			psi.StandardOutputEncoding = Encoding.UTF8;
 			psi.UseShellExecute = false;
 			Process p = Process.Start(psi);
 			string line = null;
@@ -134,7 +134,7 @@ namespace NetRevisionTool.VcsProviders
 				psi = new ProcessStartInfo(gitExec, "status --porcelain");
 				psi.WorkingDirectory = path;
 				psi.RedirectStandardOutput = true;
-				psi.StandardOutputEncoding = Encoding.Default;
+				psi.StandardOutputEncoding = Encoding.UTF8;
 				psi.UseShellExecute = false;
 				p = Process.Start(psi);
 				line = null;
@@ -155,7 +155,7 @@ namespace NetRevisionTool.VcsProviders
 				psi = new ProcessStartInfo(gitExec, "rev-parse --abbrev-ref HEAD");
 				psi.WorkingDirectory = path;
 				psi.RedirectStandardOutput = true;
-				psi.StandardOutputEncoding = Encoding.Default;
+				psi.StandardOutputEncoding = Encoding.UTF8;
 				psi.UseShellExecute = false;
 				p = Process.Start(psi);
 				line = null;

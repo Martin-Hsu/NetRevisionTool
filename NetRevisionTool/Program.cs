@@ -57,7 +57,7 @@ namespace NetRevisionTool
 				}
 
 				// Fix console things
-				Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+				Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("zh-TW");
 				ConsoleHelper.FixEncoding();
 				ConsoleHelper.TryEnableUnicode();
 
