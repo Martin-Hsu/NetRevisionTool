@@ -386,7 +386,7 @@ namespace NetRevisionTool
 					}
 				}
 
-				if (simpleAttributes && !revOnly)
+				if ( !revOnly)
 				{
 					// Replace the entire version in AssemblyVersion and AssemblyFileVersion with
 					// the truncated dotted-numeric version.
@@ -396,9 +396,8 @@ namespace NetRevisionTool
 						RegexOptions.IgnoreCase);
 					if (match.Success)
 					{
-						lines[i] = match.Groups[1].Value + truncVersion + match.Groups[3].Value;
-						Program.ShowDebugMessage("Found AssemblyVersion attribute.", 1);
-						Program.ShowDebugMessage("  Replaced \"" + match.Groups[2].Value + "\" with \"" + truncVersion + "\".");
+                        string revisionId = rf.Resolve(match.Groups[2].Value);
+                        lines[i] = match.Groups[1].Value + revisionId + match.Groups[3].Value;
 					}
 					match = Regex.Match(
 						lines[i],
@@ -406,9 +405,8 @@ namespace NetRevisionTool
 						RegexOptions.IgnoreCase);
 					if (match.Success)
 					{
-						lines[i] = match.Groups[1].Value + truncVersion + match.Groups[3].Value;
-						Program.ShowDebugMessage("Found AssemblyFileVersion attribute.", 1);
-						Program.ShowDebugMessage("  Replaced \"" + match.Groups[2].Value + "\" with \"" + truncVersion + "\".");
+                        string revisionId = rf.Resolve(match.Groups[2].Value);
+                        lines[i] = match.Groups[1].Value + revisionId + match.Groups[3].Value;
 					}
 				}
 
