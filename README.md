@@ -56,3 +56,6 @@ string info = AssemblyInformationalVersionAttribute.InformationalVersion;
 
 # Licence and terms of use
 This software is released under the terms of the GNU GPL licence, version 3. You can find the detailed terms and conditions in the download or on the [GNU website](http://www.gnu.org/licenses/gpl-3.0.html).
+
+# 使用心得
+http://small-strong.blogspot.tw/2017/10/visual-studio-c-assemblyinfocs.html
